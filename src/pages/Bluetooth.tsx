@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateField, toggleState, resetState } from '../redux/form-slice';
+import { updateField, toggleState, resetState } from '../redux/form-slice.js';
 import Checkbox from '../components/form/Checkbox';
+import UndoRedo from '../components/form/UndoRedo.js';
 
 type FormState = {
   checkbox1: boolean;
@@ -23,7 +24,9 @@ type FormState = {
 };
 
 type RootState = {
-  form: FormState;
+  form: {
+    present: FormState;
+  };
 };
 
 const Bluetooth = () => {
@@ -44,7 +47,7 @@ const Bluetooth = () => {
     date3,
     date4,
     date5,
-  } = data;
+  } = data.present;
   const dispatch = useDispatch();
 
   const handleInputChange = (field: keyof FormState, e: React.ChangeEvent<HTMLInputElement>) => {
@@ -209,6 +212,7 @@ const Bluetooth = () => {
           >
             reset
           </button>
+          <UndoRedo />
         </div>
       </div>
     </HelmetProvider>

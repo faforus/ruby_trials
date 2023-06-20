@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import formSlice from './form-slice';
+import undoableFormReducer from './form-slice.js';
 
 const store = configureStore({
   reducer: {
-    form: formSlice,
+    form: undoableFormReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
 });
