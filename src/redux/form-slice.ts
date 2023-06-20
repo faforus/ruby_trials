@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import undoable from 'redux-undo';
 
 type FormState = {
   checkbox1: boolean;
@@ -83,10 +82,8 @@ const formSlice = createSlice({
   },
 });
 
-const undoableFormSlice = undoable(formSlice.reducer);
-
-export const { updateField, toggleState, resetState } = undoableFormSlice.actions;
-export default undoableFormSlice.reducer;
+export const { updateField, toggleState, resetState } = formSlice.actions;
+export default formSlice.reducer;
 
 // import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import undoable from 'redux-undo';

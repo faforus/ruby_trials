@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Navigation from './layout/Navigation';
 import MyRoutes from './routes/Routes';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import store from './redux/store.js';
 
 function App() {
   return (
