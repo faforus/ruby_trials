@@ -12,7 +12,6 @@ const TenInputs = (props) => {
   for (let i = 1; i <= 10; i++) {
     initialValues[`number${i + props.num - 1}`] = '';
   }
-
   const validationSchema = Yup.object().shape(
     Object.keys(initialValues).reduce((schema, key) => {
       return {
@@ -54,7 +53,13 @@ const TenInputs = (props) => {
 
   return (
     <div className='flex flex-col space-y-2'>
-      <Formik initialValues={initialValues} onSubmit={submit} validationSchema={validationSchema}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={submit}
+        validationSchema={validationSchema}
+        validateOnBlur={true}
+        validateOnChange={false}
+      >
         {renderElements(Object.keys(initialValues).length)}
       </Formik>
     </div>

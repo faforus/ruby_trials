@@ -100,6 +100,7 @@ const Bluetooth = () => {
             <input
               className='textInput'
               id='text1'
+              name='text1'
               type='text'
               value={text1}
               onChange={(e) => handleInputChange('text1', e)}
@@ -110,6 +111,7 @@ const Bluetooth = () => {
             <input
               className='textInput'
               id='text2'
+              name='text2'
               type='text'
               value={text2}
               onChange={(e) => handleInputChange('text2', e)}
@@ -121,6 +123,7 @@ const Bluetooth = () => {
             <input
               className='textInput'
               id='text3'
+              name='text3'
               type='text'
               value={text3}
               onChange={(e) => handleInputChange('text3', e)}
@@ -132,6 +135,7 @@ const Bluetooth = () => {
             <input
               className='textInput'
               id='text4'
+              name='text4'
               type='text'
               value={text4}
               onChange={(e) => handleInputChange('text4', e)}
@@ -143,6 +147,7 @@ const Bluetooth = () => {
             <input
               className='textInput'
               id='text5'
+              name='text5'
               type='text'
               value={text5}
               onChange={(e) => handleInputChange('text5', e)}
@@ -153,30 +158,35 @@ const Bluetooth = () => {
         <div className='flex flex-col space-y-2 px-5'>
           <input
             type='date'
+            name='date'
             className='dateInput'
             value={date1}
             onChange={(e) => handleInputChange('date1', e)}
           />
           <input
             type='date'
+            name='date'
             className='dateInput'
             value={date2}
             onChange={(e) => handleInputChange('date2', e)}
           />
           <input
             type='date'
+            name='date'
             className='dateInput'
             value={date3}
             onChange={(e) => handleInputChange('date3', e)}
           />
           <input
             type='date'
+            name='date'
             className='dateInput'
             value={date4}
             onChange={(e) => handleInputChange('date4', e)}
           />
           <input
             type='date'
+            name='date'
             className='dateInput'
             value={date5}
             onChange={(e) => handleInputChange('date5', e)}

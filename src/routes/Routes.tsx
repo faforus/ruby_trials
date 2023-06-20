@@ -4,7 +4,7 @@ import ErrorPage from '../pages/ErrorPage';
 import Spinner from '../components/Spinner';
 
 const Home = lazy(() => import('../pages/Home'));
-const Wifi = lazy(() => import('../pages/Wifi'));
+const Wifi = lazy(() => import('../pages/Wifi.jsx'));
 const Nfc = lazy(() => import('../pages/Nfc.jsx'));
 const Bluetooth = lazy(() => import('../pages/Bluetooth'));
 
