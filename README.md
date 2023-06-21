@@ -3,7 +3,7 @@ ROZWIĄZANIA:
 1a
 -projekt początkowo zainicjowany z prettier i eslint, później eslint wyłączony - info niżej
 -zadania rozwiązywane jedno po drugim w osobnych komponentach, proste zastosowanie githuba bez branchy
--nawigacja onMouseOver przy użyciu dwóch stanów by użytkownik mobilny mógł zamykać okno klikając też w ikonę menu.
+-nawigacja onMouseOver i nawigacja onMouseClick dla mobile
 -routes lazy loading i error page
 -tytuł strony przy użyciu biblioteki react-helmet-async
 

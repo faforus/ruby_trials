@@ -5,32 +5,29 @@ import { SiNfc } from 'react-icons/si';
 import { AiFillHome } from 'react-icons/ai';
 import { RiHotspotLine } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
+import { isMobile } from '../helpers/isMobile';
 
 const Navigation = () => {
   const [extend, setExtend] = useState(false);
-  const [extendedByMouseOver, setExtendedByMouseOver] = useState(false);
 
   return (
     <Fragment>
       <div
         onMouseLeave={() => {
           setExtend(false);
-          setExtendedByMouseOver(false);
         }}
         className='w-[300px]'
       >
         <div
           onMouseEnter={() => {
+            if (isMobile()) return;
             setExtend(true);
-            setExtendedByMouseOver(true);
           }}
           onClick={() => {
-            if (extendedByMouseOver) {
-              setExtend(false);
-              setExtendedByMouseOver(false);
+            if (!isMobile()) {
+              return;
             } else {
-              setExtend(true);
-              setExtendedByMouseOver(true);
+              setExtend((prev) => !prev);
             }
           }}
           className={`z-[100] fixed w-[100px] md:w-[300px] -left-[50px] md:-left-[250px] h-[50px]  bg-orange-400 flex items-center duration-200 ${
