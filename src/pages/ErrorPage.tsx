@@ -5,9 +5,9 @@ const Error = () => {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Error</title>
+        <title>404 Error</title>
       </Helmet>
-      <div className='h-screen flex items-center justify-center'>Error</div>
+      <div className='h-screen flex items-center justify-center'>404 Error</div>
     </HelmetProvider>
   );
 };

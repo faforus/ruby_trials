@@ -4,7 +4,7 @@
 
 @layer components {
   .textInput {
-    @apply w-[150px] h-[40px] border-2 border-[#fb923c] rounded-lg outline-orange-700 focus:text-orange-600 px-2;
+    @apply w-[150px] h-[40px] border-2 border-orange-300 rounded-lg outline-orange-400 focus:text-orange-600 px-2;
   }
   .dateInput {
     @apply w-[140px] h-[50px] p-2 tracking-wide rounded-xl text-orange-600 focus:outline-orange-600;

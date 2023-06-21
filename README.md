@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+Wykorzystywane biblioteki:
+react-router (https://reactrouter.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Stwórz nową aplikację reactową. Dodaj do niej nawigację przy pomocy biblioteki react-router. Dodaj menu nawigacji po lewej stronie ekranu, które otwierać będzie się po najechaniu na nie myszką. Powinno wyświetlać w sobie kilka przykładowych zakładek (ikona + nazwa), między którymi możliwa będzie nawigacja. W zminimalizowanej formie menu nawigacji powinno być cienkim paskiem, wyświetlającym tylko ikony zakładek. Zakładki powinny wyświetlać swoją nazwę. Ta sama nazwa powinna też być częścią adresu url w przeglądarce, który będzie zmieniać się podczas przechodzenia między zakładkami.
 
-## Available Scripts
+Wykorzystywane biblioteki:
+redux (https://react-redux.js.org/)
 
-In the project directory, you can run:
+W oddzielnej zakładce dodaj 5 checkboxów, 5 pól tekstowych i 5 pól umożliwiających wybór daty. Stan całej zakładki powinien być przechowywany w reduxie, tak, że po powrocie do danej zakładki będzie on taki jak przy wyjściu z niej. Poniżej dodanych pól dodaj przycisk “Reset” który będzie resetować stan wszystkich komponentów w zakładce do domyślnych wartości. Koło przycisku “Reset” dodaj przycisk “Revert” - jeśli stan komponentów został w jakikolwiek sposób zmieniony przycisk “Revert” powinien być aktywny, w innym przypadku powinien być wyłączony. Naciśnięcie “Revert” powinno cofać stan do ostatniej zmiany. W ten sposób powinno móc dać się cofnąć minimum 20 ostatnich zmian.
 
-### `npm start`
+    Wykorzystywane biblioteki:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+yup (https://github.com/jquense/yup),
+Formik (https://formik.org),
+mui (https://mui.com/material-ui/getting-started/installation)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+W oddzielnej zakładce stwórz nowy formularz bazujący na bibliotece Formik i wykorzystujący walidowanie przy pomocy biblioteki yup. Formularz powinien zawierać w sobie 100 pól numerycznych bazujących na komponencie TextField z biblioteki mui, podzielonych na 10 kategorii. Walidacja powinna sprawdzać czy suma wartości w danej kategorii nie przekracza 10 000. Jeśli ta wartość jest przekroczona - pola przynależące do danej kategorii powinny renderować się z czerwonym obramowaniem i tekstem informującym o wystąpieniu błędu pod spodem. Zoptymalizuj formularz tak by pola tekstowe nie lagowały przy wprowadzaniu danych a walidacja odbywała się wraz z wprowadzeniem każdej nowej wartości
 
-### `npm test`
+W oddzielnej zakładce stwórz nowy formularz bazujący na bibliotece Formik i wykorzystujący walidowanie przy pomocy biblioteki yup. Formularz niech zawiera dwa pola tekstowe - A i B. Jeśli wartość wprowadzona w polu A jest dłuższa niż 10 znaków, walidacja dla pola B powinna zwracać błąd jeśli nie jest ono wypełnione. W innym wypadku walidacja dla pola B nie powinna sprawdzać żadnych wymagań. Wystąpienie błędu powinno być zaznaczone czerwonym obramowaniem pola B i tekstem informującym o wystąpieniu błędu pod spodem. Walidacja musi wykorzystywać bibliotekę yup i tworzyć error bezpośrednio w komponencie formularza Formika.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Wykorzystywane biblioteki:
+mui-datatables (https://github.com/gregnb/mui-datatables)
 
-### `npm run build`
+Stwórz oddzielną zakładkę zawierającą w sobie komponent <MUIDataTable/> z biblioteki mui-datatables. Tabela powinna wyświetlać następujące dane - https://pastebin.com/7rdh4ueb. Tabela powinna umożliwiać sortowanie po każdej możliwej kolumnie (fistName i lastName - alfabetycznie, joinDate - chronologicznie, isWorkingRemotely - sortując po wartości true/false, subordinates - według ilości wpisów). Dla wpisów w tabeli, które posiadają subordinates, powinna istnieć możliwość rozwinięcia danego rzędu. Pod danym rzędem powinny wyświetlać się wpisy z wartości subordinates posortowane według aktualnie wybranego sortowania. Komórki z podrzędów powinny odpowiadać wielkością komórkom ich rodzica i powinny wyświetlać się dokładnie w tym samym miejscu, dzięki czemu wszystkie rzędy w tabeli powinny być idealnie symetryczne.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Wykorzystywane biblioteki:
+react-dnd (https://react-dnd.github.io/react-dnd/about)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Stwórz oddzielną zakładkę. W środku umieść wyodrębniony obszar wykorzystujący bibliotekę react-dnd. Ponad nią dodaj przycisk “Add element”. Przycisk “Add element” powinien dodawać kartę z losowym, placeholderowym tekstem do layoutu wyodrębnionego obszaru. Elementy dodane do obszaru powinny renderować się w kolejnych rzędach, zawierających w sobie 3 kolumny. Dodane elementy powinny być możliwe do przeciągania na nowe miejsce w layoucie przy pomocy funkcjonalności react-dnd. W przypadku drag’n’dropowania danego elementu powinien on znikać z miejsca które dotychczas zajmował. Gdy użytkownik trzyma wciśnięty przycisk myszy i hoveruje nad miejscem już zajmowanym przez inne elementy, powinny one rozstępować się, tworząc tym samym puste miejsce na które może być upuszczony przenoszony element. W przypadku zwolnienia przycisku myszki nad obszarem wykorzystującym react-dnd przenoszony element powinien przemieszczać się w dane miejsce. Jeśli przycisk myszki zostanie zwolniony poza obszarem - element powinien wracać na miejsce z którego miał zostać przeniesiony.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Koło przycisku “Add element” dodaj przycisk “Add group”. Przycisk “Add group” powinien dodawać kartę z placeholderowym tekstem do layoutu tak jak robi to przycisk “Add element”. Grupa ma wykorzystywać funkcjonalności elementu (możliwość reorganizowania layoutu przy pomocy dragowania i dropowania), powinna posiadać jednak dodatkową funkcjonalność - w środku karty ma znajdować się oddzielny layout wykorzystujący react-dnd. Powinien on duplikować zachowanie głównego layoutu (kolejne rzędy, 3 kolumny, możliwość reorganizowania elementów, trzymanie w sobie zwykłych elementów jak i grup). Podstawowe elementy jak i grupy powinny móc być przenoszone między poszczególnymi layoutami - między grupami, grupą a głównym layoutem itp. Nestowanie grup powinno być teoretycznie nieskończone - tj. możliwe powinno być umieszczenie grupy w grupie w grupie w grupie itd.

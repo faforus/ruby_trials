@@ -7,18 +7,30 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   const [extend, setExtend] = useState(false);
+  const [extendedByMouseOver, setExtendedByMouseOver] = useState(false);
 
   return (
     <Fragment>
       <div
         onMouseLeave={() => {
           setExtend(false);
+          setExtendedByMouseOver(false);
         }}
         className='w-[300px]'
       >
         <div
           onMouseEnter={() => {
             setExtend(true);
+            setExtendedByMouseOver(true);
+          }}
+          onClick={() => {
+            if (extendedByMouseOver) {
+              setExtend(false);
+              setExtendedByMouseOver(false);
+            } else {
+              setExtend(true);
+              setExtendedByMouseOver(true);
+            }
           }}
           className={`z-[100] fixed w-[100px] md:w-[300px] -left-[50px] md:-left-[250px] h-[50px]  bg-orange-400 flex items-center duration-200 ${
             extend && 'md:translate-x-[250px]'
@@ -33,28 +45,28 @@ const Navigation = () => {
             extend && 'translate-x-[50px] md:translate-x-[300px]'
           }`}
         >
-          <ul className='p-10 space-y-4'>
+          <ul className='p-10 space-y-4 flex flex-col items-center md:items-start'>
             <li>
               <NavLink to='/' className='flex items-center'>
-                <AiFillHome className='mr-4' />
+                <AiFillHome className='md:mr-4' />
                 <span className='hidden md:block tracking-widest'>home</span>
               </NavLink>
             </li>
             <li>
               <NavLink to='/bluetooth' className='flex items-center'>
-                <FiBluetooth className='mr-4' />
+                <FiBluetooth className='md:mr-4' />
                 <span className='hidden md:block tracking-widest'>bluetooth</span>
               </NavLink>
             </li>
             <li>
               <NavLink to='/wifi' className='flex items-center'>
-                <BiWifi className='mr-4' />
+                <BiWifi className='md:mr-4' />
                 <span className='hidden md:block tracking-widest'>wifi</span>
               </NavLink>
             </li>
             <li>
               <NavLink to='/nfc' className='flex items-center'>
-                <SiNfc className='mr-4' />
+                <SiNfc className='md:mr-4' />
                 <span className='hidden md:block tracking-widest'>nfc</span>
               </NavLink>
             </li>
