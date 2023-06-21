@@ -7,6 +7,7 @@ const Home = lazy(() => import('../pages/Home.jsx'));
 const Wifi = lazy(() => import('../pages/Wifi.jsx'));
 const Nfc = lazy(() => import('../pages/Nfc.jsx'));
 const Bluetooth = lazy(() => import('../pages/Bluetooth'));
+const Hotspot = lazy(() => import('../pages/Hotspot.jsx'));
 
 const MyRoutes = () => {
   return (
@@ -41,6 +42,14 @@ const MyRoutes = () => {
           element={
             <Suspense fallback={<Spinner />}>
               <Bluetooth />
+            </Suspense>
+          }
+        />
+        <Route
+          path='hotspot'
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Hotspot />
             </Suspense>
           }
         />

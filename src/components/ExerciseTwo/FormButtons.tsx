@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetState } from '../../redux/form-slice.js';
-import UndoRedo from '../form_components/UndoRedo.js';
+import UndoRedo from './UndoRedo.js';
 type FormState = {};
 
 type RootState = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useField } from 'formik';
+import { useField, FastField } from 'formik';
 import { TextField, FormHelperText } from '@mui/material';
 
 const MuiTextField = ({ label, ...props }) => {
@@ -8,10 +8,14 @@ const MuiTextField = ({ label, ...props }) => {
   const isInvalid = Boolean(meta.error);
 
   return (
-    <>
-      <TextField {...field} {...props} label={label} error={isInvalid} />
-      {isInvalid && <FormHelperText error>{meta.error}</FormHelperText>}
-    </>
+    <FastField name={props.name}>
+      {({ form }) => (
+        <>
+          <TextField {...field} {...props} label={label} error={isInvalid} />
+          {isInvalid && <FormHelperText error>{meta.error}</FormHelperText>}
+        </>
+      )}
+    </FastField>
   );
 };
 

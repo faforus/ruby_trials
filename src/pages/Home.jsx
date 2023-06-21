@@ -22,7 +22,7 @@ const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <div className='h-screen flex items-center justify-center'>
+      <div className='h-screen flex items-center justify-center min-h-[200px]'>
         <Formik
           initialValues={{ A: '', B: '' }}
           onSubmit={async (values) => {

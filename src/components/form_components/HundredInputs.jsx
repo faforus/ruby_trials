@@ -3,7 +3,7 @@ import MuiTextField from './MuiTextField';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-const TenInputs = (props) => {
+const HundredInputs = () => {
   const submit = () => {
     console.log('Submit');
   };
@@ -12,7 +12,7 @@ const TenInputs = (props) => {
 
   const initialValues = {};
   for (let i = 1; i <= numberOfFields; i++) {
-    initialValues[`number${i + props.num - 1}`] = '';
+    initialValues[`number${i + 1}`] = '';
   }
 
   const fieldsPerGroup = 10;
@@ -52,29 +52,37 @@ const TenInputs = (props) => {
       .map((_, index) => (
         <MuiTextField
           type='number'
-          id={`number${index + props.num}`}
-          name={`number${index + props.num}`}
-          label={`number-${index + props.num}`}
+          id={`number${index + 1}`}
+          name={`number${index + 1}`}
+          label={`number-${index + 1}`}
           key={index + 1}
         />
       ));
 
-    return <>{elements}</>;
+    const dividedElements = [];
+    for (let i = 0; i < elements.length; i += 10) {
+      dividedElements.push(elements.slice(i, i + 10));
+    }
+
+    return (
+      <>
+        {dividedElements.map((group, index) => (
+          <div className='flex flex-col space-y-2' key={index}>
+            <h1>Group {index + 1}</h1>
+            {group}
+          </div>
+        ))}
+      </>
+    );
   };
 
   return (
-    <div className='flex flex-col space-y-2'>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={submit}
-        validationSchema={validationSchema}
-        validateOnBlur={true}
-        validateOnChange={false}
-      >
+    <div className='flex flex-col lg:flex-row lg:space-x-2'>
+      <Formik initialValues={initialValues} onSubmit={submit} validationSchema={validationSchema}>
         {renderElements(100)}
       </Formik>
     </div>
   );
 };
 
-export default TenInputs;
+export default HundredInputs;

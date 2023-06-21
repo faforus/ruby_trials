@@ -11,7 +11,7 @@ const Bluetooth = () => {
       <Helmet>
         <title>Bluetooth</title>
       </Helmet>
-      <div className='md:h-screen flex flex-col md:flex-row items-center justify-center space-x-4 space-y-4 p-10'>
+      <div className='md:h-screen flex flex-col md:flex-row items-center justify-center space-x-4 space-y-4 p-10 min-h-[400px]'>
         <FiveCheckboxes />
         <FiveTextInputs />
         <FiveDateInputs />

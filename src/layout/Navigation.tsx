@@ -3,6 +3,7 @@ import { FiBluetooth } from 'react-icons/fi';
 import { BiWifi } from 'react-icons/bi';
 import { SiNfc } from 'react-icons/si';
 import { AiFillHome } from 'react-icons/ai';
+import { RiHotspotLine } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
@@ -68,6 +69,12 @@ const Navigation = () => {
               <NavLink to='/nfc' className='flex items-center'>
                 <SiNfc className='md:mr-4' />
                 <span className='hidden md:block tracking-widest'>nfc</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/hotspot' className='flex items-center'>
+                <RiHotspotLine className='md:mr-4' />
+                <span className='hidden md:block tracking-widest'>hotspot</span>
               </NavLink>
             </li>
           </ul>
