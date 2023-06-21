@@ -18,3 +18,4 @@
 -problem przy sortowaniu tabeli gdzie subordinates jest rozwinięte - wartości znikają
 
 5a
+-w fazie nauki i testowania
