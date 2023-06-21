@@ -26,7 +26,7 @@ const HundredInputs = () => {
   const validationSchema = Yup.object().shape(validationSchemaFields);
 
   function createNumberValidation(num) {
-    return Yup.number().test('invalid-number', 'over 1000', function () {
+    return Yup.number().test('over-1000', 'over 1000', function () {
       const allValues = this.parent;
 
       let sum = 0;
