@@ -1,6 +1,8 @@
 ROZWIĄZANIA:
 
 1a
+-projekt początkowo zainicjowany z prettier i eslint, później eslint wyłączony - info niżej
+-zadania rozwiązywane jedno po drugim w osobnych komponentach, proste zastosowanie githuba bez branchy
 -nawigacja onMouseOver przy użyciu dwóch stanów by użytkownik mobilny mógł zamykać okno klikając też w ikonę menu.
 -routes lazy loading i error page
 -tytuł strony przy użyciu biblioteki react-helmet-async
@@ -26,6 +28,7 @@ PROBLEMY:
 Napotkane problemy, które kosztowały dużo czasu
 
 2a
+-typescript, mając mniejsze doświadczenie z ts i nieznanymi bibliotekami postanowiłem w trakcie projektu przejść spowrotem na js i wyłączyć eslint
 -inny syntax reducerów, banalny problem z owinięciem reducerów w funkcję undoable
 
 3a
