@@ -3,45 +3,36 @@
 @tailwind utilities;
 
 @layer components {
-  .textInput {
-    @apply w-[150px] h-[40px] border-2 border-orange-300 rounded-lg outline-orange-400 focus:text-orange-600 px-2;
-  }
-  .dateInput {
-    @apply w-[140px] h-[50px] p-2 tracking-wide rounded-xl text-orange-600 focus:outline-orange-600;
-  }
 }
 
-body {
-  background-color: aqua;
+.yes_no {
+  transition: transform 0.2s ease-in-out;
 }
 
-input[type='checkbox'] {
-  appearance: none;
+input[type='range'] {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  height: 30px;
-  width: 30px;
-  border: 2px solid #fb923c;
-  outline: none;
-  border-radius: 4px;
-  background-color: #fff;
+  height: 22px;
+  width: 100%;
+  background: rgb(243 244 246);
+  border-radius: 11px;
 }
 
-input[type='checkbox']:checked {
-  background-color: #fb923c;
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #002f6c;
+  cursor: pointer;
 }
 
-input[type='checkbox']::before {
-  content: '';
-  display: block;
-  width: 12px;
-  height: 12px;
-  margin: 7px;
-  background-color: #fff;
-  border: 2px solid #fb923c;
-  border-radius: 2px;
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
 }
 
-input[type='checkbox']:checked::before {
-  background-color: #fb923c;
+.formatted-number::after {
+  content: attr(data-value);
 }
