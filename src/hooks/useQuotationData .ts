@@ -24,9 +24,18 @@ export const useQuotationData = (
     try {
       setLoading(true);
 
-      const response = await fetch(
-        `https://web.action-plan.app/api/pricing/quotation.json?quotation[accounts]=${totalAccountsCount}&quotation[modules]=${moduleString}&quotation[currency]=${currencyString}&quotation[addon_limits][audit_areas]=${auditAreasCount}&quotation[addon_limits][checklistsCount]=${checklistsCount}`,
-      );
+      const accounts = `quotation[accounts]=${totalAccountsCount}`;
+      const modules = `quotation[modules]=${moduleString}`;
+      const currency = `quotation[currency]=${currencyString}`;
+      const addonLimits =
+        auditAreasCount !== 0 && checklistsCount !== 0
+          ? `&quotation[addon_limits][audit_areas]=${auditAreasCount}&quotation[addon_limits][checklists]=${checklistsCount}`
+          : '';
+
+      const url = `https://web.action-plan.app/api/pricing/quotation.json?${accounts}&${modules}&${currency}${addonLimits}`;
+
+      const response = await fetch(url);
+
       const jsonData = await response.json();
 
       if (response.ok) {

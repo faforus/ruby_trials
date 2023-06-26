@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import YesNoRadio from '../components/YesNoRadio';
 import RangeSlider from '../components/RangeSlider';
 import { useQuotationData } from '../hooks/useQuotationData ';
@@ -17,6 +17,7 @@ const Home = () => {
   const [currency, setCurrency] = useState(true);
   const [currentCurrency, setCurrentCurrency] = useState(true);
   const [moduleString, setModuleString] = useState('');
+  const [getAudits, setGetAudits] = useState(false);
 
   useEffect(() => {
     totalSetAccountCount(
@@ -34,7 +35,12 @@ const Home = () => {
 
   return (
     <div className='flex flex-col items-center justify-center space-y-4 py-10'>
-      <Availability setModuleString={setModuleString} />
+      <Availability
+        setModuleString={setModuleString}
+        setGetAudits={setGetAudits}
+        setAuditAreasCount={setAuditAreasCount}
+        setChecklistsCount={setChecklistsCount}
+      />
       <div className='md:w-[540px] space-y-4'>
         <div className='space-y-4 bg-gray-200 rounded-xl p-5'>
           <RangeSlider
@@ -74,26 +80,33 @@ const Home = () => {
           />
           <TotalUsers totalAccountsCount={totalAccountsCount} />
         </div>
-        <div className='bg-gray-200 rounded-xl p-5'>
-          <RangeSlider
-            min={10}
-            max={250}
-            step={1}
-            label='Liczba stref audytowych'
-            value={auditAreasCount}
-            func={setAuditAreasCount}
-          />
-        </div>
-        <div className='bg-gray-200 rounded-xl p-5'>
-          <RangeSlider
-            min={1}
-            max={50}
-            step={1}
-            label='Liczba list kontrolnych'
-            value={checklistsCount}
-            func={setChecklistsCount}
-          />
-        </div>
+        {getAudits && (
+          <Fragment>
+            {' '}
+            <div className='bg-gray-200 rounded-xl p-5'>
+              <RangeSlider
+                min={0}
+                // min={10}
+                max={250}
+                step={1}
+                label='Liczba stref audytowych'
+                value={auditAreasCount}
+                func={setAuditAreasCount}
+              />
+            </div>
+            <div className='bg-gray-200 rounded-xl p-5'>
+              <RangeSlider
+                min={0}
+                // min={1}
+                max={50}
+                step={1}
+                label='Liczba list kontrolnych'
+                value={checklistsCount}
+                func={setChecklistsCount}
+              />
+            </div>
+          </Fragment>
+        )}
       </div>
       <div className='flex items-center justify-end md:w-[540px] space-x-6'>
         <YesNoRadio
