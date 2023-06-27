@@ -38,32 +38,49 @@ const Availability = (props: Props) => {
   return (
     <div className='flex flex-col items-center space-y-3 text-xl tracking-wider font-normal w-full px-4 text-center md:text-left'>
       <label htmlFor='availability'>Dostępność</label>
-      <div className='text-base space-y-2 md:space-y-0'>
-        <button
-          name='availability'
-          onClick={() => {
-            setAuditTypes(true);
-            setPulse(false);
-          }}
-          className={`px-4 py-2 hover:bg-gray-200 rounded-xl md:rounded-b-none md:w-[240px] ${
-            auditTypes && 'bg-gray-200'
-          }`}
-        >
-          Audyty tylko przez WWW
-        </button>
-        <button
-          name='availability'
-          onClick={() => {
-            setAuditTypes(false);
-            setPulse(true);
-          }}
-          className={`px-4 py-2 hover:bg-gray-200 rounded-xl md:rounded-b-none md:w-[300px] ${
-            !auditTypes && 'bg-gray-200'
-          }`}
-        >
-          Audyty przez WWW i w telefonie
-        </button>
-        <div className='bg-gray-200 p-5 flex flex-col rounded-xl md:rounded-t-none'>
+      <div className='text-base'>
+        <div className='flex'>
+          <label
+            htmlFor='availability_www'
+            className={`block ${
+              auditTypes ? 'bg-gray-200' : 'hover:bg-gray-200'
+            } px-4 py-2 rounded-t-xl md:rounded-b-none md:w-[240px] cursor-pointer`}
+          >
+            <input
+              type='radio'
+              name='availability'
+              id='availability_www'
+              checked={auditTypes}
+              onChange={() => {
+                setAuditTypes(true);
+                setPulse(false);
+              }}
+              className='hidden'
+            />
+            Audyty tylko przez WWW
+          </label>
+          <label
+            htmlFor='availability_www_phone'
+            className={`block ${
+              !auditTypes ? 'bg-gray-200' : 'hover:bg-gray-200'
+            } px-4 py-2 rounded-t-xl md:rounded-b-none md:w-[300px] cursor-pointer`}
+          >
+            <input
+              type='radio'
+              name='availability'
+              id='availability_www_phone'
+              checked={!auditTypes}
+              onChange={() => {
+                setAuditTypes(false);
+                setPulse(true);
+              }}
+              className='hidden'
+            />
+            Audyty przez WWW i w telefonie
+          </label>
+        </div>
+
+        <div className='bg-gray-200 p-5 flex flex-col rounded-b-xl'>
           {auditTypes ? (
             <div className='bg-gray-100 p-5 flex flex-col rounded-xl space-y-2 md:w-[500px]'>
               <div className='flex flex-col md:flex-row space-y-2 items-center justify-between'>

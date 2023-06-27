@@ -85,8 +85,7 @@ const Home = () => {
             {' '}
             <div className='bg-gray-200 rounded-xl p-5'>
               <RangeSlider
-                min={0}
-                // min={10}
+                min={10}
                 max={250}
                 step={1}
                 label='Liczba stref audytowych'
@@ -96,8 +95,7 @@ const Home = () => {
             </div>
             <div className='bg-gray-200 rounded-xl p-5'>
               <RangeSlider
-                min={0}
-                // min={1}
+                min={1}
                 max={50}
                 step={1}
                 label='Liczba list kontrolnych'
