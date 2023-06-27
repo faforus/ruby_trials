@@ -1,3 +1,5 @@
+https://rubytrials.web.app/ live demo
+
 Strona przedstawia tylko jeden komponent złożony z paru mniejszych. Nie ma routera.
 Przykład użycia routera oraz biblioteki helmet można zobaczyć w tym projekcie https://github.com/faforus/wielechowski.ts
 
